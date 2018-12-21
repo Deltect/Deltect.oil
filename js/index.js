@@ -23,7 +23,7 @@ card_product = [
     },
     "data_intro": {
       "title": "敬請期待",
-      "img": "./img/product/Coming.jpg"
+      "img":"./img/product/Coming.jpg",
       "intro": ""
     }
   },
