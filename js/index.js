@@ -19,11 +19,11 @@ card_product = [
     "target_id": "pro02",
     "data": {
       "title": "即將上市",
-      "img": "./img/product/10W40/1-0.jpg",
+      "img": "./img/product/Coming.jpg"
     },
     "data_intro": {
       "title": "敬請期待",
-      "img":"./img/product/10W40/1-0.jpg",
+      "img": "./img/product/Coming.jpg"
       "intro": ""
     }
   },
