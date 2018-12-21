@@ -1,0 +1,307 @@
+@mixin center
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+
+@mixin size($w,$h:$w)
+  width: $w
+  height: $h
+
+@mixin img_center
+  display: block
+  margin: 0 auto
+
+@keyframes sliceIn_left
+  0%
+    transform: translateX(-100px)
+    opacity: 0
+  100%
+    transform: translateX(0px)
+    opacity: 1
+
+@keyframes sliceIn_down
+  0%
+    transform: translateY(-100px)
+    opacity: 0
+  100%
+    transform: translateY(0px)
+    opacity: 1
+@keyframes sliceIn //cover
+  0%
+    transform: translateY(-100px)
+    opacity: 0
+  100%
+    transform: translateY(0px)
+    opacity: 1
+@keyframes sliceOut //loading
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes left
+  0% 
+    z-index: 1
+  50% 
+    left: 50px
+
+@keyframes right
+  50% 
+    right: 50px
+
+html,body,#main
+  +size(100%)
+  margin: 0
+  padding: 0
+  font-family: "微軟正黑體"
+  background-color: #ddd
+
+#loading
+  +size(100%)
+  +center
+  background-color: rgba(255,255,255,0.6)
+  font-weight: bold
+  font-size: 18pt
+  color: rgba(237,153,22,0.8)
+  animation: sliceOut 2.5s 0.1s ease
+  .myloading
+    position: relative
+    width: 110px
+    height: 50px
+    .left,.right
+      position: absolute
+      top: 0
+      width: 50px
+      height: 50px
+      border-radius: 100%
+      animation: 1s ease-in-out infinite
+    .left
+      background: rgb(237,153,22)
+      left: 0
+      animation-name: left
+    .right 
+      background: rgb(88,181,48)
+      right: 0
+      animation-name: right
+    
+#nav
+  display: none
+  .sitename
+    font-size: 25pt
+  .fa-bars
+    color: #fff
+  a
+    color: #fff
+    +center
+  a:hover
+    color: #0ff
+
+#main
+  display: none
+  
+  #home
+    background-color: #ccc
+    opacity: 0
+    transition: opacity 1.5s
+    animation: sliceIn 2s 0.1s ease
+    .cover
+      +center
+      +size(100%)
+      background: url('../img/bg.png') center no-repeat 
+      background-size: cover
+      color: #000
+      padding-top: 0px
+      img
+        width: 40%
+        min-width: 300px
+        margin-bottom: 30px
+        padding-bottom: 30px
+        border-bottom: solid 1px #aaa
+      h1
+        font-weight: 900
+        margin-bottom: 30px
+      .p 
+        background-color: rgba(0,0,0,0.6)
+        p
+        font-weight: 400
+        margin-bottom: 30px
+        word-wrap: break-all
+        padding: 10px
+        +center
+        color: #eee
+      a
+        border: solid 1px #00f
+        color: #000
+        transition-duration: 0.4s
+        padding: 15px
+      a:hover
+        background-color: #00f
+        border: solid 1px #fff
+        color: #fff
+        transition: 1.5s
+        font-weight: bold
+      span:hover:after
+        content: ">>"
+        
+
+  .title
+    +size(100%,40px)
+    +center
+    background-color: #fff
+    font-size: 20pt
+    font-weight: bold
+    
+  #product,#experiment,#about,#act,#QA
+    padding-top: 100px
+    display: none
+    animation: sliceIn_down 1s 0.1s ease
+
+  #product
+    .myframe
+      +center
+      iframe
+        width: 100%
+        height: 300px
+        border: none
+        margin: 10px
+        padding: 10px 
+
+  #product,#experiment
+    .container
+      width: 100%
+      .row
+        padding: 0px 0
+        margin: 0
+      .col-md-3,.col-6
+        padding: 0
+        border-bottom: solid 10px #eee
+        .card
+          background-color: #ddd
+          border: solid 1px #888
+          height: 250px
+          a
+            text-decoration: none
+            color: #000
+          a:hover
+            color: #08a
+          img
+            +size(160px)
+            +img_center
+          img:hover
+            transform: translateY(-10px)
+            transition: 0.3s
+          .card-img-top
+            padding: 10px
+          .card-body
+            border-top: solid 1px #888
+            p
+              +center
+      .modal-dialog
+        .modal-content
+          background-color: #fff
+        .modal-header
+          background-color: #eee
+          border-bottom: solid 1px #777
+        .modal-body  
+          border-bottom: solid 1px #777
+          img
+            +size(200px)
+            +img_center
+          .intro_title
+            text-align: center
+            
+  #about
+    line-height: 30pt
+    .content
+      padding: 0 10%
+      h3
+        margin-top: 20px
+      p
+        margin: 0
+    .mycol
+      padding: 0 15px
+      border: solid 1px #aaa
+      margin: 20px
+      h5
+        font-weight: bold
+      p
+        margin: 0
+        font-size: 11pt
+      img
+        +img_center
+
+  #act,#QA
+    .content
+      ul
+        list-style-type: none
+        li
+          border-bottom: solid 1px #000
+          .quest
+            width: 100%
+            height: auto
+            overflow: hidden
+            padding: 15px
+            a
+              text-decoration: none
+              color: #000
+            a:hover,a:focus
+              color: #00f
+          .answer
+            width: 100%
+            height: auto
+            position: relative
+            padding-left: 10px
+            .card
+              margin-bottom: 10px
+              background-color: #ddd
+              border: solid 1px #888
+            .ans_title
+              position: absolute
+              top: 20px
+              left: 20px
+              margin: 0
+              padding: 0
+            .ans
+              width: 100%
+              height: auto
+              line-height: 30px
+              padding: 0px 10px 0px 35px
+
+  #footer
+    display: none
+    width: 100%
+    .content
+      margin: 0
+      padding: 50px 5%
+      background-color: #ccc
+      line-height: 25pt
+      h4
+        font-weight: bold
+        margin-bottom: 20px
+        +center
+      .touch,.contact
+        margin-bottom: 40px
+        .pics
+          .card
+            background-color: #ccc
+            border: 0
+            img
+              +size(70px)
+              +img_center
+      .contact
+        p
+          +center
+        img
+          +img_center
+          +size(100px)
+          margin-left: 20px
+        
+          
+    .end
+      margin: 0
+      padding: 0
+      background-color: #fff
+      a
+        +center
+

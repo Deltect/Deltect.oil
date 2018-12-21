@@ -1,0 +1,257 @@
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="shortcut icon" href="./img/icon/icon.png")
+
+    //font-awesome 5.0.8
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous")
+    //bootstrap 4.0.0
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    script(src="https://code.jquery.com/jquery-3.3.1.js"  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+    //css
+    link(rel="stylesheet"  href="./css/style.css")
+    //vue
+    script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+    script(src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js")
+
+    title DPMotorOil
+  body
+    #loading
+      p 網頁載入中
+      .myloading
+        .left
+        .right
+      
+    #nav.container
+      nav.navbar.navbar-expand-md.navbar-light.bg-dark.fixed-top
+        a(href="#home" onclick="home()").navbar-brand.sitename DPMotorOil
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navlist" aria-controls="navlist" aria-expanded="false" aria-label="Toggle navigation")
+          i.fas.fa-bars
+
+        .collapse.navbar-collapse#navlist.bg-dark
+          ul.navbar-nav.mr-auto
+            li.nav-item
+              a(href="#product" onclick="fn(0)").nav-link.active 產品
+            li.nav-item 
+              a(href="#experiment" onclick="fn(1)").nav-link 實驗室
+            li.nav-item
+              a(href="#sale" onclick="fn(3)").nav-link 活動與促銷
+            li.nav-item
+              a(href="#QA" onclick="fn(4)").nav-link Q&A
+            li.nav-item
+              a(href="#about" onclick="fn(2)").nav-link 關於DP
+
+    #main
+      #home
+        .cover
+          img(src="./img/DP.png")
+          h1.display-4 DP專業機油
+          .p
+            p.lead 主打國際技術台灣在地研發、製造、包裝和品管統在地統一管理並接受客戶需求研發各種油化保養產品。
+            p.lead 讓每一個消費者能真正使用到符合自己的好產品。            
+          a(href="#product" onclick="start()").btn.btn-light 
+            span Continue
+
+      #app
+        #product
+          h1.title 產品
+          .myframe.container
+            iframe(src="https://www.youtube.com/embed/pMyr4Cy0-No?ecver=2" allow="autoplay; encrypted-media" allowfullscreen)
+          .container
+            .row
+              .col-md-3.col-6(v-for="card in cards.card_product")
+                .card
+                  card(:card_data="card")
+ 
+        #experiment
+          h1.title 實驗室介紹
+          .container
+            .row
+              .col-md-3.col-6(v-for="card in cards.card_experiment")
+                .card
+                  card(:card_data="card")
+        
+      #about
+        h1.title 關於DP
+        .content
+          h3 DP專業機油特殊優勢
+          p 別人進口機油,我們進口技術,別人派送專員勘查進口商,我們派送技術員與國際大廠研發技術,別人進口的是產品,我們去交流的是技術,擁有國際的技術,進口國際原料大廠,在地製造生產,過程全程監督,別人可以抽查前做足準備,我們永遠都在監督下做足品質。 
+          hr
+          h3 DP專業機油最終目標
+          p DP專業機油與台灣在地專業製造商合作，以及我們自身專業且完善的實驗室，來做到更優良的產品，來超越各種進口機油，以及台灣在地其他品牌，成為最專業的機油製造團隊，打造最強大的機油品牌
+          hr
+          h3 DP推陳出新
+          p DP專業機油擁有最好的研發和創新技術的能力，透過不斷提高產品效能與品質的信念，是品牌發展與公司不斷突破的保證。DP專業機油團隊的專業水準與國際標準看齊。專注發展和嚴以律己的精神，成就品牌的不同凡響。
+          hr
+          h3 DP專業機油核心價值
+          h5 TECHNOLOGY
+          p 我們使用國內外最尖端的技術，DP專業機油持續挑戰並精進自身技術並保持最佳品質。我們認為在任何一個市場的顧客，都能得到最好的照顧。我們用自身嚴格把關和挑選國際級原物料,來創造最高品質的產品，在這方面的品質DP專業機油絕不怠惰。DP專業機油的產品性能，比市場上任何產品更好更優良。
+          h5 REATION
+          p DP專業機油擁有最好的研發和創新技術的能力，透過不斷提高產品效能與品質的信念，是品牌發展與公司不斷突破的保證。
+          h5 COMMITMENT
+          p DP專業機油團隊的專業水準鱌國際標準看齊，專注研發和嚴格律己的態度，造就品牌的不同凡響。
+          p 我們使用國內外最尖端的技術，DP專業機油持續挑戰並精進自身技術並保值最佳品質。我們認為在任何一個市場的顧客，都能得到最好的照顧。
+          p 我們用原物料為我們自身把關和挑選創造高品質的產品，在這方面的品質DP專業機油絕不懈怠。DP專業機油產品性能夠比市場上任何產品更好。
+          hr
+          h3 DP所做的
+          p DP專業機油是與台灣在地製造商合作的網路行銷公司，以解決客戶需求為最優先。
+          p 我們所做的 我們擁有國際的技術，台灣在地的產線，從原料、研發、量產、品管、包裝到出貨，完整的程序，達到最高品質及嚴格品管的最高原則，由網路行銷減少實體通路中被剝奪的利潤與不必要的成本，給顧客最直接的價格。 
+          p 我們的戰略 我們的戰略是通過在網路行銷，減少成本來達到與實體店家競爭，擁有相對便宜的價格卻又有高品質的商品當作我們的優勢，與許多進口盤商做競爭。 
+          p 我們的策略 我們策略的實施建立在擁有在地製造商作為依靠，在技術與品管上面都能與國際品牌做抗衡，甚至超越，成就台灣製造不輸國際品牌之能力。
+          p 我們的優勢 我們的主要優勢包括先進的技術開發和完整的產線，允許我們提供個人化開發項目，創造出與別人不同的價值。 
+          p 綜合以上論點，我們能用最低的價格，做出最好的產品，盡量節省一切不必要的成本以及浪費，給予顧客CP值最高的價格，因為從研發到出貨都是統一管理，所以可以做到品質保證。                  
+        .mycol.row
+          .col-12.col-md-2
+            img(src="./img/about/DP.png" alt="")
+          .col-12.col-md-10
+            h5 我們的堅持
+            p DP專業機油秉承創新與傳統，產品性能歷經實驗室精密調配以及數據驗證，來達到國產品牌超越進口品牌的目的，幫助您節省花費更能提高品質。 
+            p 我們擁有經驗豐富的設備製、專業的工程師以及完整的設備研發與生產，通過國際技術與自身研發部門共同創造更好的產品，研發更加先進的潤滑油品。無論是何種需求與條件，由我們幫助您克服目前和未來的挑戰。
+            hr
+          .col-12.col-md-2
+            img(src="./img/about/DELTEC.png" alt="")
+          .col-12.col-md-10
+            h5 我們的專業
+            p 我們使用國內外最尖端的技術，DP專業機油持續挑戰並精進自身技術並保持最佳品質。我們認為在任何一個市場的顧客，都能得到最好的照顧。我們用原物料為我們自身把關和挑選創造最高品質的產品，在品質方面DP專業機油絕不怠惰。DP專業機油產品性能，以數據佐證追求超越進口品牌。
+
+      #act
+        h1.title 活動與促銷
+        .content
+          ul.px-1.px-md-5
+            li
+              .quest
+                a(data-toggle="collapse" href="#act_a1" role="button" aria-expanded="false" aria-controls="a1") 開幕特惠(買越多省越多)
+              .answer#act_a1.collapse
+                .card.card-body
+                  p.ans_title 開幕特惠
+                  article.ans
+                    p <br>3-4瓶97折<br>5-6瓶95折<br>7-9瓶92折<br>1箱9折($315元/瓶)<br>2相88折($308元/瓶)<br>3箱72瓶85折($298元/瓶)
+
+      #QA
+        h1.title Q&A
+        .content
+          ul.px-1.px-md-5
+            li
+              .quest
+                a(data-toggle="collapse" href="#qa_a1" role="button" aria-expanded="false" aria-controls="a1") Q1. 礦物油與合成油?
+              .answer#qa_a1.collapse
+                .card.card-body
+                  p.ans_title A1.
+                  article.ans
+                    p 機油是基礎油和添加劑兩個部分組成。基礎油可以是礦物油或合成油。而礦物油，是直接從石油提煉而得的是用製作潤滑油的成分。而合成油利用更為複雜的化學合成將其重組而成的物質，其物理化學性能穩定，不含雜質，與礦物油相比具有許多優點：例如，對熱穩定、抗氧化性能優異、抗黏度變化的能力強。
+
+            li
+              .quest
+                a(data-toggle="collapse" href="#qa_a2" role="button" aria-expanded="false" aria-controls="a2") Q2. 合成機油有什麼優點?
+              .answer#qa_a2.collapse
+                .card.card-body
+                  p.ans_title A2.
+                  article.ans
+                    p 一、保護能力較好<br>二、高溫抗氧化能力強<br>三、比礦物油的使用壽命延長1-2倍<br>四、油品消耗少<br>五、使用溫度範圍廣，可用於極低和極高的環境溫度….等許多優點
+            li
+              .quest
+                a(data-toggle="collapse" href="#qa_a3" role="button" aria-expanded="false" aria-controls="a2") Q3. 機油對發動機的作用？
+              .answer#qa_a3.collapse
+                .card.card-body
+                  p.ans_title A3.
+                  article.ans
+                    p 發動機是屬於汽車的心臟，所以發動機則是動力系統中最重要的一個結構，然而發動機在運轉中會有許多相互摩擦的金屬零件，一個優秀的潤滑油可依照品質達到不同程度的降低發動機零件的磨損，延長使用壽命，優秀的潤滑油要擁有六大 
+                    h6 一、潤滑減磨：
+                    p 保護在發動機內部運轉中的金屬零件，要防止零件過快的磨損，則需要在兩個滑動的金屬表面間建立足夠的油膜。有足夠厚度的油膜將相對滑動的金屬零件表面隔開以及潤滑，來達到減少磨損的目的。
+                    h6 二、冷卻降溫：
+                    p 機油會將運轉中產生的熱量帶回機油箱然後傳達至空氣中散熱幫助水箱快速冷卻發動機。
+                    h6 三、清洗清潔：
+                    p 優秀的機油能將發動機金屬零件上的碳化物、油泥、磨損金屬顆粒等雜物通迴圈帶回機油箱，通過潤滑油的流動，來清洗金屬零件工在作面上產生的髒物。
+                    h6 四、密封防漏：
+                    p 機油可以在活塞環與活塞之間形成一個密封圈，減少氣體的洩漏和防止外界的污染物進入。
+                    h6 五、防銹防蝕：
+                    p 潤滑油能吸咐在金屬零件表面產生保護膜，防止水、空氣、酸性物質及有害氣體對零件的破壞。
+                    h6 六、減震緩衝：
+                    p 發動機氣缸口壓力迅速上升時，會突然加劇活塞、活塞屑、連杆和曲軸軸承上的負荷，此時優秀的潤滑油在這時能產生傳遞功能軸承不被此負荷破壞，使承受的衝擊負荷達到緩衝減震的作用。
+            li
+              .quest
+                a(data-toggle="collapse" href="#qa_a4" role="button" aria-expanded="false" aria-controls="a2") Q4. 酯類(ESTER)機油的優點?
+              .answer#qa_a4.collapse
+                .card.card-body
+                  p.ans_title A4.
+                  article.ans
+                    p 一、低溫流動性較好，所以對冷車引擎保護性較為優秀，VI值高(VI值:因溫度變化而導致黏度改變的程度，越高越不容易改變)。
+                    p 二、產生的酸性物質最為少量。 
+                    p 三、低摩擦性能，抗磨性能佳，可以使齒輪及軸承磨耗最少，達到更好的保護作用。 
+                    p 四、在高溫下不易形成膠質漆與結碳，減少產生雜質。 
+                    p 五、使用時間長久以後產品劣化時不易產生積垢或油泥等現象。 
+                    p 六、氧化穩定度極佳，不易變質。 
+                    p 七、低發揮性能，有較佳的高溫穩定性。 
+                    p 八、添加劑溶解性極佳。 
+                    p 九、高油膜強度、高熱氧化穩定性以及高剪力穩定性。
+
+      #footer
+        .content.row
+          .col-12.col-md-6
+            h4 DP機油商業原則
+            p 做為一家網路經銷公司配合台灣在地經營的製造商，我們擁有國際技術以及制定了高標準的品質和道德行為。以如何行事以及如何恪守本分，正直和尊重人的核心價值來判斷我們的團隊。
+            p 我們的商業原則是基於這些原則的。促進信任、開放、團隊合作和專業精神，以及對我們做什麼和如何開展業務感到自豪。 我們希望DP機油的所有員工和團隊都了解並持續遵守我們的商業原則。
+          .col-12.col-md-6
+            .row
+              .col-12.touch
+                h4 Get in Touch
+                .row.pics
+                  .col-3.col-md-3
+                    .card
+                      a(href="https://www.facebook.com/DPMotorOil/")
+                        img(src="./img/footer/04.png" alt="").card-img-top
+                  .col-3.col-md-3
+                    .card
+                      a(href="http://seller.pcstore.com.tw/S143157385")
+                        img(src="./img/footer/02.png" alt="").card-img-top
+                  .col-3.col-md-3
+                    .card
+                      a(href="http://class.ruten.com.tw/user/index00.php?s=nich1648")
+                        img(src="./img/footer/01.png" alt="").card-img-top
+                  .col-3.col-md-3
+                    .card
+                      a(href="https://tw.bid.yahoo.com/booth/Y7807992086?bfe=1")
+                        img(src="./img/footer/05.png" alt="").card-img-top
+              .col-12.contact
+                .row
+                  .col-12.col-md-4
+                    h4 聯絡我
+                    p 電話: 0958750564
+                    p Line: dpmotoroil
+                  .col-6.col-md-4
+                    a(href="http://line.me/ti/p/ThOQTykWBO")
+                      img(src="./img/about/L.png")
+                  .col-6.col-md-4
+                    a(href="https://www.facebook.com/DPMotorOil/")
+                      img(src="./img/about/facebook.png")
+        .end
+          a(href="https://www.facebook.com/DPMotorOil/") 2018 Copyright © DPMotorOil All Rights Reserved.Design by Taiwan Products
+
+    template#card
+      .card_container
+        a(data-toggle="modal" :data-target="card_data.target")
+          img(:src="card_data.data.img").card-img-top
+          .card-body
+            .card-title
+              p {{card_data.data.title}}
+
+        .modal.fade(:id="card_data.target_id" tabindex="-1" role="dialog"  aria-hidden="true")
+          .modal-dialog(role="document")
+            .modal-content
+              .modal-header
+                h5.modal-title {{card_data.data.title}}
+                button.close(type="button" data-dismiss="modal") &times
+              .modal-body
+                img(:src="card_data.data_intro.img")
+                .intro_title
+                  pre {{card_data.data_intro.title}}
+                .intro
+                  pre {{card_data.data_intro.intro}}
+              .modal-footer
+                button(type="button" class="close" data-dismiss="modal") Close
+
+    //js
+    script(src="./js/index.js")
