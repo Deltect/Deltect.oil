@@ -4,13 +4,13 @@ card_product = [
     "target": "#pro01",
     "target_id": "pro01",
     "data": {
-      "title": "即將上市",
-      "img": "./img/product/Coming.jpg"
+      "title": "酯類全合成機油10W40",
+      "img": "./img/product/10W40/1.jpg"
     },
     "data_intro": {
-      "intro_title": "敬請期待",
-      "intro_img":"./img/product/Coming.jpg",
-      "intro": ""
+      "title": "德特10W40四行程全合成酯基引擎機油",
+      "img": "./img/product/10W40/1-0.jpg",
+      "intro": "4T全合成 10W40\n符合規範:API SN JASO MA-II\n建議售價500\n說明：\n1.以全酯基及PAO全合成基礎油及耐高溫高抗氧化添加劑調配。\n2.含特殊引擎保護配方，強化油膜降低引擎磨損。\n3.低溫容易啟動，全時保護引擎，省油又有力。\n4.特殊高抗剪切黏度向上劑，可避免引擎馬力衰退無力。\n適用：適用各廠牌機車全車系、噴射引擎及陶瓷汽缸引擎。\n包裝：1Liter"
     }
   },
   {
@@ -22,8 +22,8 @@ card_product = [
       "img": "./img/product/Coming.jpg"
     },
     "data_intro": {
-      "intro_title": "敬請期待",
-      "intro_img":"./img/product/Coming.jpg",
+      "title": "敬請期待",
+      "img":"./img/product/Coming.jpg",
       "intro": ""
     }
   },
@@ -36,8 +36,8 @@ card_product = [
       "img": "./img/product/Coming.jpg"
     },
     "data_intro": {
-      "intro_title": "敬請期待",
-      "intro_img":"./img/product/Coming.jpg",
+      "title": "敬請期待",
+      "img":"./img/product/Coming.jpg",
       "intro": ""
     }
   },
@@ -50,8 +50,8 @@ card_product = [
       "img": "./img/product/Coming.jpg"
     },
     "data_intro": {
-      "intro_title": "敬請期待",
-      "intro_img":"./img/product/Coming.jpg",
+      "title": "敬請期待",
+      "img":"./img/product/Coming.jpg",
       "intro": ""
     }
   },
@@ -68,7 +68,7 @@ card_product = [
       "intro_img":"./img/product/Coming.jpg",
       "intro": ""
     }
-},
+  },
   {
     "id": "product",
     "target": "#pro06",
