@@ -57,6 +57,9 @@ card_product = [
   },
   {
     "id": "product",
+    "target": "#pro05",
+    "target_id": "pro05",
+    "data": {
     "title": "酯類全合成機油15W40",
     "img": "./img/product/15W40/1.jpg"
   },
