@@ -76,7 +76,7 @@ card_product = [
     "target_id": "pro01",
     "data": {
       "title": "酯類全合成機油5W40",
-      "img": "./img/product/5W40/01.jpg"
+      "img": "./img/product/5W40/1.png"
     },
     "data_intro": {
       "title": "德特5W40四行程全合成酯基引擎機油",
