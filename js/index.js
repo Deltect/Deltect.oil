@@ -47,11 +47,11 @@ card_product = [
     "target_id": "pro04",
     "data": {
     "title": "酯類全合成機油5W40",
-    "img": "./img/product/5W40/1.jpg"
+    "img": "./img/product/5W40/1.png"
     },
     "data_intro": {
     "title": "德特5W40四行程全合成酯基引擎機油",
-    "img": "./img/product/5W40/1.jpg",
+    "img": "./img/product/5W40/1.png",
     "intro": "4T全合成 5W40\n符合規範:API SN JASO MA-II\n建議售價400\n說明：\n1.以全酯基及PAO全合成基礎油及耐高溫高抗氧化添加劑調配。\n2.含特殊引擎保護配方，強化油膜降低引擎磨損。\n3.低溫容易啟動，全時保護引擎，省油又有力。\n4.特殊高抗剪切黏度向上劑，可避免引擎馬力衰退無力。\n適用：適用各廠牌機車全車系、噴射引擎及陶瓷汽缸引擎。\n包裝：1Liter"
   }
 },
